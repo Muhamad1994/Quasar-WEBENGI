@@ -276,7 +276,7 @@ h6 span {
 </style>
 
 <script>
-import { getAuth } from "firebase/auth";
+/**import { getAuth } from "firebase/auth";
 firebase
   .auth()
   .createUserWithEmailAndPassword(email, password)
@@ -301,5 +301,5 @@ firebase
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-  });
+  });*/
 </script>
