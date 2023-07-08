@@ -11,30 +11,20 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Fachschaft Wirtschaft
-        </q-toolbar-title>
+        <q-toolbar-title> Fachschaft Wirtschaft </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Navigation Bar </q-item-label>
 
         <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
+          v-for="page in essentialLinks"
+          :key="page.title"
+          v-bind="page"
         />
       </q-list>
     </q-drawer>
@@ -46,72 +36,59 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
-
+import { defineComponent, ref } from "vue";
+import EssentialLink from "components/NavBar.vue";
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: "Anmeldung",
+    caption: "Anmeldung für die Ersti-Fahrt",
+    icon: "school",
+    page: "Ersti",
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: "News",
+    caption: "Neuigkeiten am Wirtschaftsbereich",
+    icon: "chat",
+    link: "https://twitter.quasar.dev/",
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: "Kalender",
+    caption: "Aktuelle Termine",
+    icon: "feed",
+    link: "https://chat.quasar.dev/",
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: "Gallerie",
+    caption: "Eindrücke des Fachbereichs Wirtschaft",
+    icon: "camera",
+    link: "https://github.com/quasarframework",
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    title: "Impressum",
+    caption: "Autoren der Seite",
+    icon: "person",
+    link: "https://forum.quasar.dev/",
   },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+];
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
 
   components: {
-    EssentialLink
+    EssentialLink,
   },
 
-  setup () {
-    const leftDrawerOpen = ref(false)
+  setup() {
+    const leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-})
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+    };
+  },
+});
 </script>

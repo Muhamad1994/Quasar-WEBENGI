@@ -104,6 +104,7 @@
   </html>
 </template>
 
+//
 <style>
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 body {
@@ -316,4 +317,9 @@ firebase
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "AnmeldungBox",
+});
 </script>
