@@ -41,34 +41,46 @@ import EssentialLink from "components/NavBar.vue";
 
 const linksList = [
   {
+    title: "Home",
+    caption: "",
+    icon: "house",
+    page: "/",
+  },
+  {
     title: "Anmeldung",
     caption: "Anmeldung für die Ersti-Fahrt",
     icon: "school",
     page: "Ersti",
   },
   {
+    title: "Anmelden",
+    caption: "Login/Registrieren",
+    icon: "key",
+    page: "Anmelden",
+  },
+  {
     title: "News",
     caption: "Neuigkeiten am Wirtschaftsbereich",
     icon: "chat",
-    link: "https://twitter.quasar.dev/",
+    page: "News",
   },
   {
     title: "Kalender",
     caption: "Aktuelle Termine",
     icon: "feed",
-    link: "https://chat.quasar.dev/",
+    page: "Kalender",
   },
   {
     title: "Gallerie",
     caption: "Eindrücke des Fachbereichs Wirtschaft",
     icon: "camera",
-    link: "https://github.com/quasarframework",
+    page: "Gallerie",
   },
   {
     title: "Impressum",
     caption: "Autoren der Seite",
     icon: "person",
-    link: "https://forum.quasar.dev/",
+    page: "Impressum",
   },
 ];
 

@@ -21,13 +21,7 @@ function sendConfirmation() {
 
   alert("eine Bestätigung wurde an" + email + "gesendet");
 }
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "AnmeldungErsti",
-});
 </script>
-
 <style>
 body {
   font-family: Arial, sans-serif;

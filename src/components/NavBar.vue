@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" target="_blank" to="#">
+  <q-item clickable tag="a" target="_blank" :to="page">
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>

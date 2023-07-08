@@ -1,22 +1,7 @@
 <template>
-  <!DOCTYPE html>
-  <html lang="en">
+  <q-page>
     <head>
       <title>Loginbox</title>
-      <meta charset="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <link
-        rel="stylesheet"
-        href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      />
-      <link rel="stylesheet" href="loginbox.css" />
     </head>
 
     <body>
@@ -101,7 +86,7 @@
         </div>
       </div>
     </body>
-  </html>
+  </q-page>
 </template>
 
 //
@@ -317,9 +302,4 @@ firebase
     var errorCode = error.code;
     var errorMessage = error.message;
   });
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "AnmeldungBox",
-});
 </script>

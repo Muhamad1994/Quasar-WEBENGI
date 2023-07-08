@@ -1,40 +1,37 @@
 <template>
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Veranstaltungskalender</title>
-    </head>
-    <body>
-      <h1>Veranstaltungskalender</h1>
+  <head>
+    <title>Veranstaltungskalender</title>
+  </head>
+  <body>
+    <h1>Veranstaltungskalender</h1>
 
-      <div class="calendar">
-        <div class="header">
-          <button id="prevButton">&lt;</button>
-          <h2 id="monthYear"></h2>
-          <button id="nextButton">&gt;</button>
-        </div>
-        <table id="calendarTable">
-          <thead>
-            <tr>
-              <th>Son</th>
-              <th>Mon</th>
-              <th>Die</th>
-              <th>Mit</th>
-              <th>Don</th>
-              <th>Fre</th>
-              <th>Sam</th>
-            </tr>
-          </thead>
-          <tbody id="calendarBody"></tbody>
-        </table>
+    <div class="calendar">
+      <div class="header">
+        <button id="prevButton">&lt;</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextButton">&gt;</button>
       </div>
-      <div id="eventForm">
-        <input type="text" id="eventName" placeholder="Veranstaltungsname" />
-        <input type="date" id="eventDate" placeholder="Datum" />
-        <button id="addEventButton">Hinzufügen</button>
-      </div>
-    </body>
-  </html>
+      <table id="calendarTable">
+        <thead>
+          <tr>
+            <th>Son</th>
+            <th>Mon</th>
+            <th>Die</th>
+            <th>Mit</th>
+            <th>Don</th>
+            <th>Fre</th>
+            <th>Sam</th>
+          </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+      </table>
+    </div>
+    <div id="eventForm">
+      <input type="text" id="eventName" placeholder="Veranstaltungsname" />
+      <input type="date" id="eventDate" placeholder="Datum" />
+      <button id="addEventButton">Hinzufügen</button>
+    </div>
+  </body>
 </template>
 <script>
 document.addEventListener("DMContentLoaded", function () {

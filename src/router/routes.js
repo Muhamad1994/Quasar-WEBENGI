@@ -11,6 +11,26 @@ const routes = [
         path: "Ersti",
         component: () => import("pages/AnmeldungErstiPage.vue"),
       },
+      {
+        path: "Anmelden",
+        component: () => import("pages/AnmeldungBox.vue"),
+      },
+      {
+        path: "News",
+        component: () => import("pages/NewsPage.vue"),
+      },
+      {
+        path: "Kalender",
+        component: () => import("pages/KalenderView.vue"),
+      },
+      {
+        path: "Gallerie",
+        component: () => import("pages/GalleryView.vue"),
+      },
+      {
+        path: "Impressum",
+        component: () => import("pages/ImpressumView.vue"),
+      },
     ],
   },
 
