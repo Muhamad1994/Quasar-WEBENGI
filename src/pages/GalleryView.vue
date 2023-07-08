@@ -27,45 +27,45 @@
 </template>
 
 <script>
-import { db } from '@/firebase';
+/* import { db } from '@/firebase';
 import { storage } from 'firebase/app'; // Import the storage module from firebase/app
-
+*/
 export default {
   data() {
     return {
       images: [],
       newImage: {
-        title: '',
-        description: '',
+        title: "",
+        description: "",
         file: null,
-        url: ''
-      }
-    }
+        url: "",
+      },
+    };
   },
   mounted() {
-    this.loadImages()
+    this.loadImages();
   },
   methods: {
     async loadImages() {
-      const snapshot = await db.collection('images').get()
-      this.images = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+      const snapshot = await db.collection("images").get();
+      this.images = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     },
     onFileChange(event) {
-      this.newImage.file = event.target.files[0]
+      this.newImage.file = event.target.files[0];
     },
     async addImage() {
       const storageRef = storage().ref(); // Use the storage() function to get the storage reference
-      const fileRef = storageRef.child(`images/${this.newImage.file.name}`)
-      const snapshot = await fileRef.put(this.newImage.file)
-      const url = await snapshot.ref.getDownloadURL()
+      const fileRef = storageRef.child(`images/${this.newImage.file.name}`);
+      const snapshot = await fileRef.put(this.newImage.file);
+      const url = await snapshot.ref.getDownloadURL();
       const image = {
         title: this.newImage.title,
         description: this.newImage.description,
-        url: url
-      }
-      await db.collection('images').add(image)
-      this.images.push(image)
-    }
-  }
-}
+        url: url,
+      };
+      await db.collection("images").add(image);
+      this.images.push(image);
+    },
+  },
+};
 </script>

@@ -34,6 +34,7 @@
   </body>
 </template>
 <script>
+/*
 document.addEventListener("DMContentLoaded", function () {
   var currentDate = new Date();
   var currentMonth = currentDate.getMonth();
@@ -57,7 +58,7 @@ prevButton.addEventListener("click", function () {
 nextButton.addEventListener("click", function () {
   currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
   currentMonth = currentMonth === 11;
-});
+});*/
 </script>
 
 <style>
