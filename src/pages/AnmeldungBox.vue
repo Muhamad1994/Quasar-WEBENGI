@@ -2,6 +2,19 @@
   <q-page>
     <head>
       <title>Loginbox</title>
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <link
+        rel="stylesheet"
+        href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      />
     </head>
 
     <body>
@@ -266,7 +279,7 @@ h6 span {
   display: inline-flex;
   align-items: center;
   background-color: #f7f7fa;
-  color: #152565;
+  color: #1fa104;
 }
 .btn:hover {
   background-color: #152565;
