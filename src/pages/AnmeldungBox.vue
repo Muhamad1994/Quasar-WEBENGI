@@ -13,7 +13,7 @@
               <div class="section pb-5 pt-5 pt-sm-2 text-center">
                 <!--Wechsel zwischen Einloggen und Registrieren-->
                 <h6 class="mb-0 pb-3">
-                  <span>Einloggen oder Nicht </span><span>Registrieren</span>
+                  <span>Einloggen</span><span>Registrieren</span>
                 </h6>
                 <input
                   class="checkbox"
