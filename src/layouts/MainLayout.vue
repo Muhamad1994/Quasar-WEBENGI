@@ -12,8 +12,6 @@
         />
 
         <q-toolbar-title> Fachschaft Wirtschaft </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
