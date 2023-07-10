@@ -1,7 +1,7 @@
 <template>
   <!--Statische Bildergallerie-->
   <div>
-    <h2>Eindrücke der FH Kiel</h2>
+    <h2 style="text-align: center">Eindrücke der FH Kiel</h2>
     <div v-for="image in images" :key="image" class="gallery-images">
       <q-img :src="image" :key="image" />
     </div>

@@ -3,9 +3,8 @@
     <div class="wrapper">
       <div class="zero"></div>
       <div class="one">
-        <h2></h2>
+        <h2>Vorletztes Sommersemester vor Curriculum-Änderung</h2>
 
-        <h4>Wirtschaftsinformatiker an der FH Kiel im vorletzten Sommersemester vor Curriculum-Änderung</h4>
         Für die Studierenden im 6. Semester des Wirtschaftsinformatik-Studiengangs an der Fachhochschule Kiel steht das vorletzte mögliche Sommersemester an.
         Mit Blick auf das 6-semestrige Curriculum müssen sie bis zum Wintersemester 2024/2025 ihren Abschluss erreichen, um von der aktuellen Studienstruktur zu profitieren.
         Ab dem Wintersemester 2024/2025 wird das Curriculum final auf eine andere Studienstruktur umgestellt, wodurch das vorliegende Zeitfenster für
@@ -98,15 +97,6 @@ body {
   background-color: #f9f9f9;
 }
 
-img {
-  width: 25%;
-  height: auto;
-  float: right;
-  margin-top: 7%;
-  margin-left: 2.5%;
-  margin-right: 5%;
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -115,7 +105,7 @@ img {
   padding-top: 2%;
   padding-left: 7%;
   padding-right: 7%;
-  padding-bottom: 10%;
+  padding-bottom: 2%;
 }
 
 /* Template für News-Einträge

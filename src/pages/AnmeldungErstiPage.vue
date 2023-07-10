@@ -1,11 +1,14 @@
 <template>
   <q-page>
     <h2 style="text-align: center">Anmeldung</h2>
-    <h4 style="text-align: center">Melde dich hier für die Ersti-Fahrt an!</h4>
     <div style="text-align: center">
-      Nach der Anmeldung solltest du eine Bestätigungs-Email an die angegebene
-      Adresse bekommen. <br />
-      <b>Jede Anmeldung ist Verpflichtend.</b>
+      <h5>
+        Melde dich hier für die Ersti-Fahrt an! <br />
+        Nach der Anmeldung solltest du eine Bestätigungs-Email an die angegebene
+        Adresse bekommen. <br />
+        <br />
+        <b>Jede Anmeldung ist Verpflichtend.</b>
+      </h5>
     </div>
     <br />
     <div>

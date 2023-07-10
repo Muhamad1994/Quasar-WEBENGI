@@ -4,7 +4,7 @@
       <!--Inhalt in Anlehnug an die FaWi Seite-->
       <h2 style="text-align: center">Die neue Fachschafts-Seite!</h2>
 
-      <h4>Neuerungen</h4>
+      <h5>Neuerungen</h5>
       Nicht nur wurde der Webseite ein neues Design verpasst, außerdem findest
       du auf der neuen Fachschafts-Seite ein
       <a href="#/News" style="color: rgba(128, 207, 226, 0.938)">News-Feed</a>
@@ -20,8 +20,20 @@
       dem neuen Reiter
       <a href="#/Kalender" style="color: rgba(128, 207, 226, 0.938)">Kalender</a
       >.
-      <div class="image"><img src="~assets/Fachschaft.jpg" /></div>
-      <h4>Über uns</h4>
+      <div>
+        <img
+          src="~assets/Fachschaft.jpg"
+          style="
+            width: 25%;
+            height: auto;
+            float: right;
+            margin-top: 5%;
+            margin-left: 2.5%;
+            margin-right: 5%;
+          "
+        />
+      </div>
+      <h5>Über uns</h5>
       Die Fachschaftsvertretung ist die offizielle Vertretung der Studierenden
       am Fachbereich. Sie wird einmal pro akademischem Jahr (2 Semester) gewählt
       und fungiert als Bindeglied zwischen den Studierenden, Professoren und dem
@@ -31,7 +43,7 @@
       die Wahl nicht erfolgreich ist oder man nur gelegentlich Zeit hat, kann
       man sich gerne als Helfer/in bei uns melden und aktiv am Geschehen
       teilnehmen.
-      <h4>Wir helfen bei euren Anliegen</h4>
+      <h5>Wir helfen bei euren Anliegen</h5>
       <p>
         Wir bieten umfassende Informationen zur Fachhochschule an und geben
         wertvolle Tipps speziell für Erstsemester. Wenn du Schwierigkeiten bei
@@ -43,7 +55,7 @@
         dem Fachbereich. Zögere nicht, uns anzusprechen, wenn du Fragen oder
         Anliegen hast.
       </p>
-      <h4>Kontakt</h4>
+      <h5>Kontakt</h5>
       <p>
         Falls du Fragen zu uns oder unserer Arbeit hast, besuche uns gerne
         persönlich im Raum 0.12 in C03 jeden Mittwoch und Donnerstag zwischen
@@ -106,14 +118,5 @@ body {
   background-color: #152565;
   color: white;
   font-size: 140%;
-}
-
-img {
-  width: 25%;
-  height: auto;
-  float: right;
-  margin-top: 7%;
-  margin-left: 2.5%;
-  margin-right: 5%;
 }
 </style>
