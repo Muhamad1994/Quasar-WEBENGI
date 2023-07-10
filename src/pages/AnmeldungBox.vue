@@ -288,7 +288,7 @@ h6 span {
 </style>
 
 <script>
-/*import { auth } from "/firebaseConfig";*/
+import { auth } from "src/plugin/firebase.js";
 
 export default {
   data() {
