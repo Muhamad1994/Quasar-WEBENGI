@@ -12,6 +12,7 @@
         />
 
         <q-toolbar-title> Fachschaft Wirtschaft </q-toolbar-title>
+        <div><img src="~assets/FaWi.png" /></div>
       </q-toolbar>
     </q-header>
 
