@@ -72,8 +72,8 @@
     </div>
     <footer>
       <hr />
-      <a href="#">AGB</a>
-      <a href="#/News">Über uns</a>
+      <a href="#/AGB">AGB</a>
+      <a href="#">Über uns</a>
       <a href="https://www.fh-kiel.de/fachbereiche/wirtschaft/">FH Kiel</a>
       <hr />
     </footer>

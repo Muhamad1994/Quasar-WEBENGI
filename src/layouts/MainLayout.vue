@@ -45,12 +45,6 @@ const linksList = [
     page: "/",
   },
   {
-    title: "Anmeldung",
-    caption: "Anmeldung für die Ersti-Fahrt",
-    icon: "school",
-    page: "Ersti",
-  },
-  {
     title: "Anmelden",
     caption: "Login/Registrieren",
     icon: "key",
@@ -73,6 +67,12 @@ const linksList = [
     caption: "Eindrücke des Fachbereichs Wirtschaft",
     icon: "camera",
     page: "Gallerie",
+  },
+  {
+    title: "Ersti-Fahrt",
+    caption: "Anmeldung für die Ersti-Fahrt",
+    icon: "school",
+    page: "Ersti",
   },
   {
     title: "Impressum",
@@ -102,3 +102,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+}
+</style>

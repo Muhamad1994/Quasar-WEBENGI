@@ -1,10 +1,23 @@
 <template>
   <q-page>
     <h2 style="text-align: center">Anmeldung</h2>
+    <h4 style="text-align: center">Melde dich hier für die Ersti-Fahrt an!</h4>
+    <div style="text-align: center">
+      Nach der Anmeldung solltest du eine Bestätigungs-Email an die angegebene
+      Adresse bekommen. <br />
+      <b>Jede Anmeldung ist Verpflichtend.</b>
+    </div>
+    <br />
     <div>
       <form @submit="sendConfirmation">
+        <label for="name">Vorname:</label
+        ><input v-model="name" id="name" name="name" required />
+        <label for="surename">Nachname:</label>
+        <input v-model="surename" id="surename" name="surename" required />
         <label for="email">E-mail:</label>
-        <input v-model="email" id="email" name="email" required /><br /><br />
+        <input v-model="email" id="email" name="email" required />
+        <label for="major">Studiengang:</label
+        ><input v-model="major" id="major" name="major" required /><br /><br />
         <input type="submit" value="Anmeldung" />
       </form>
     </div>
@@ -21,9 +34,13 @@ export default {
 
   methods: {
     sendConfirmation() {
-      /*var email = document.getElementById("email").value;*/
+      /*var email = document.getElementById("email").value; (js funktion für 'normale HTML Seiten' ohne Quasar*/
 
-      alert("eine Bestätigung wurde an " + this.email + " gesendet");
+      alert(
+        "eine Bestätigung wurde an " +
+          this.email +
+          " gesendet, wir freuen uns auf dich!"
+      );
     },
   },
 };
@@ -53,7 +70,7 @@ label {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
+/*
 input[type="email"] {
   width: 100%;
   padding: 10px;
@@ -73,7 +90,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
+} */
 
 /* Optional: Styling für die Bestätigungsnachricht */
 .alert {

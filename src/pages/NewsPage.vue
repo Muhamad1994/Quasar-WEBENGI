@@ -3,59 +3,25 @@
     <div class="wrapper">
       <div class="zero"></div>
       <div class="one">
-        <div class="image"><img src="~assets/Fachschaft.jpg"></div>
-        <!--Inhalt in Anlehnug an die FaWi Seite-->
-        <h2>Über Uns</h2>
-        Die Fachschaftsvertretung ist die offizielle Vertretung der Studierenden
-        am Fachbereich. Sie wird einmal pro akademischem Jahr (2 Semester)
-        gewählt und fungiert als Bindeglied zwischen den Studierenden,
-        Professoren und dem Fachbereich. Da die Fachschaftsvertretung auf
-        basisdemokratischen Prinzipien beruht, hat jeder Studierende am
-        Fachbereich Wirtschaft die Möglichkeit, sich in der
-        Fachschaftsvertretung zu engagieren. Selbst wenn die Wahl nicht
-        erfolgreich ist oder man nur gelegentlich Zeit hat, kann man sich gerne
-        als Helfer/in bei uns melden und aktiv am Geschehen teilnehmen.
-        <h4>Wir helfen bei euren Anliegen</h4>
-        <p>
-          Wir bieten umfassende Informationen zur Fachhochschule an und geben
-          wertvolle Tipps speziell für Erstsemester. Wenn du Schwierigkeiten bei
-          der Klausuranmeldung hast, unterstützen wir dich gerne dabei. Außerdem
-          freuen wir uns, wenn du Gedächtnisprotokolle von Klausuren erstellst
-          und sie mit uns teilst. Ein Pool von Gedächtnisprotokollen ist für
-          andere Studierende sehr hilfreich, um sich optimal auf Klausuren
-          vorzubereiten. Wir sind die Vermittler zwischen den Studierenden, den
-          Professoren und dem Fachbereich. Zögere nicht, uns anzusprechen, wenn
-          du Fragen oder Anliegen hast.
-        </p>
-        <h4>Kontakt</h4>
-        <p>
-          Falls du Fragen zu uns oder unserer Arbeit hast, besuche uns gerne
-          persönlich im Raum 0.12 in C03 jeden Mittwoch und Donnerstag zwischen
-          12:00 und 14:00 Uhr. Und wenn wir mal nicht vor Ort sind, kannst du
-          uns jederzeit über
-          <a
-            href=" https://www.instagram.com/fawi_kiel/"
-            style="color: rgba(128, 207, 226, 0.938)"
-            target="_blank"
-            >Instagram</a
-          >,
-          <a
-            href="https://www.facebook.com/fawi.kiel/"
-            style="color: rgba(128, 207, 226, 0.938)"
-            target="_blank"
-          >
-            Facebook </a
-          >oder per
-          <a
-            href="mailto:wirtschaft.fachschaft@fh-kiel.de"
-            style="color: rgba(128, 207, 226, 0.938)"
-            >Mail.</a
-          >
-        </p>
+        <h2></h2>
+
+        <h4>Wirtschaftsinformatiker an der FH Kiel im vorletzten Sommersemester vor Curriculum-Änderung</h4>
+        Für die Studierenden im 6. Semester des Wirtschaftsinformatik-Studiengangs an der Fachhochschule Kiel steht das vorletzte mögliche Sommersemester an.
+        Mit Blick auf das 6-semestrige Curriculum müssen sie bis zum Wintersemester 2024/2025 ihren Abschluss erreichen, um von der aktuellen Studienstruktur zu profitieren.
+        Ab dem Wintersemester 2024/2025 wird das Curriculum final auf eine andere Studienstruktur umgestellt, wodurch das vorliegende Zeitfenster für
+        die Absolvierung des Studiums begrenzt ist. Die Übergangsregelung greift nur noch bis zum
+        Wintersemester 24/25. Wer bis dahin den Bachelor im 6. semestrigem Curriculum nicht beendet, muss in das neue 7 semestrige Curriculum übergehen. <br>
+        Aber keine Angst. Alle erbrachten Leistungen werden angerechnet, sodass das gesamte Studium nicht wiederholt werden muss. Lediglich die neuen oder
+        stark abgeänderten Pflicht-Module müssen belegt werden. <br />
+        Das Ziel dieser Änderung ist, dass genug ECTS gesammelt werden können, um mit dem Wirtschaftsinformatik-Studium eine Grundlage
+        für Masterstudiengänge wie Data Science zu schaffen. <br>
+        Weitere Information für die Übergangsregelungen und Anrechnung von Punkten finden Sie <a href="" style ="color: rgba(128, 207, 226, 0.938)">hier</a>.
+
+
       </div>
       <div class="two">
         <!--Inhalt aus dem "Aktuelles" der FH Seite, Quelle: https://www.fh-kiel.de/fh-intern/fachbereiche-intern/wirtschaft/aktuelles/einzelansicht/das-ibs-team-sucht-studentische-hilfskraft/ -->
-        <h2>Das IBS Team sucht Studentische Hilfskraft</h2>
+        <h2>Das IBS-Team sucht Studentische Hilfskraft</h2>
 
         <p>
           Das IBS Büro der Fachhochschule Kiel sucht ab sofort eine studentische Hilfskraft für eine Arbeitszeit von mindestens 30 Stunden pro Monat. Wir sind offen für Bewerbungen von Studierenden in den unteren Semestern, da wir an einer langfristigen Zusammenarbeit interessiert sind.
@@ -76,14 +42,14 @@ Weitere Informationen zum Industriebegleiteten Studium finden Sie unter <a
             >http://www.fh-kiel.de/ibs</a
           >.
 Bitte senden Sie Ihre Bewerbung per E-Mail an <a
-            href="mailto:claudia.martens@fh-kiel.de"
+            href="mailto:max.Mustermann@fh-kiel.de"
             style="color: rgba(128, 207, 226, 0.938)"
-            >claudia.martens@fh-kiel.de</a>.
-        Bei Fragen steht Ihnen Frau Martens telefonisch unter Tel. <u>0431 / 210-2605</u> zur Verfügung.
+            >max.mustermann@fh-kiel.de</a>.
+        Bei Fragen steht Ihnen Herr Mustermann telefonisch unter Tel. <u>0431 / 123-4567</u> zur Verfügung.
         </p>
       </div>
       <div class="three">
-        <!--Beispiel Parapharsiert von: Gehde, L. (8. Juli 2023). Kunst und Kultur auf dem FH-Campus - auch in den Semesterferien. FH Seite. Zugriff von:
+        <!--Beispiel Parapharsiert teilweise durch ChatGPT von: Gehde, L. (8. Juli 2023). Kunst und Kultur auf dem FH-Campus - auch in den Semesterferien. FH Seite. Zugriff von:
       https://www.fh-kiel.de/news/kunst-und-kultur-auf-dem-fh-campus-auch-in-den-semesterferien/-->
         <h2>Kunst und Kultur auf dem Campus der FH außerhalb der Vorlesungszeiten</h2>
         <p>
@@ -136,7 +102,7 @@ img {
   width: 25%;
   height: auto;
   float: right;
-  margin-top: 5%;
+  margin-top: 7%;
   margin-left: 2.5%;
   margin-right: 5%;
 }
@@ -168,7 +134,7 @@ img {
 .one {
   border-radius: 50px;
   padding: 2%;
-  grid-column: 4/ 4;
+  grid-column: 4 / 4;
   grid-row: 1 / 4;
   background-color: #152565;
   color: white;
@@ -192,16 +158,5 @@ img {
   color: white;
   font-size: 140%;
 }
-
-
-/*.four {
-  border-radius: 50px;
-  padding: 2%;
-  grid-column: 4 / 4;
-  grid-row: 15 / 19;
-  background-color: #616161;
-  color: rgb(255, 255, 255);
-  margin-bottom: 2%;
-} */
 </style>
 

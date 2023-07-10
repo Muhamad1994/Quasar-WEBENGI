@@ -1,8 +1,5 @@
 <template>
-  <head>
-    <title>Veranstaltungskalender</title>
-  </head>
-  <body>
+  <div>
     <h1>Veranstaltungskalender</h1>
 
     <div class="calendar">
@@ -14,13 +11,13 @@
       <table id="calendarTable">
         <thead>
           <tr>
-            <th>Son</th>
-            <th>Mon</th>
-            <th>Die</th>
-            <th>Mit</th>
-            <th>Don</th>
-            <th>Fre</th>
-            <th>Sam</th>
+            <th>So</th>
+            <th>Mo</th>
+            <th>Di</th>
+            <th>Mi</th>
+            <th>Do</th>
+            <th>Fr</th>
+            <th>Sa</th>
           </tr>
         </thead>
         <tbody id="calendarBody"></tbody>
@@ -31,34 +28,87 @@
       <input type="date" id="eventDate" placeholder="Datum" />
       <button id="addEventButton">Hinzufügen</button>
     </div>
-  </body>
+  </div>
 </template>
+
 <script>
-/*
-document.addEventListener("DMContentLoaded", function () {
-  var currentDate = new Date();
-  var currentMonth = currentDate.getMonth();
-  var currentYear = currentDate.getFullYear();
+export default {
+  mounted() {
+    document.addEventListener("DOMContentLoaded", function () {
+      var currentDate = new Date();
+      var currentMonth = currentDate.getMonth();
+      var currentYear = currentDate.getFullYear();
 
-  var monthYearElement = document.getElementByID("monthYear");
-  var prevButton = document.getEmentById("prevButton");
-  var nextButton = document.getElementById("nextButton");
-  var calendarBody = document.getElementById("calendarBody");
-  var eventNameInput = document.getElementById("eventName");
-  var eventDateInput = document.getElementById("eventDate");
-  var addEventButton = document.getElementById("addEventButton");
-});
+      var monthYearElement = document.getElementById("monthYear");
+      var prevButton = document.getElementById("prevButton");
+      var nextButton = document.getElementById("nextButton");
+      var calendarBody = document.getElementById("calendarBody");
+      var eventNameInput = document.getElementById("eventName");
+      var eventDateInput = document.getElementById("eventDate");
+      var addEventButton = document.getElementById("addEventButton");
 
-prevButton.addEventListener("click", function () {
-  currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-  currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-  renderCalendar();
-});
+      /*function renderCalendar() {
+        var monthYearElement = document.getElementById("monthYear");
+        var calendarBody = document.getElementById("calendarBody");
 
-nextButton.addEventListener("click", function () {
-  currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-  currentMonth = currentMonth === 11;
-});*/
+        // Clear the calendar body
+        calendarBody.innerHTML = "";
+
+        // Get the first day of the month
+        var firstDay = new Date(currentYear, currentMonth, 1);
+
+        // Get the number of days in the month
+        var lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        // Set the month and year in the header
+        monthYearElement.textContent = `${currentMonth + 1}/${currentYear}`;
+
+        // Calculate the starting day of the week
+        var startDayOfWeek = firstDay.getDay();
+        if (startDayOfWeek === 0) {
+          startDayOfWeek = 7; // Convert Sunday (0) to 7
+        }
+
+        // Create calendar rows and cells
+        var row = document.createElement("tr");
+
+        // Add empty cells for previous month's days
+        for (var i = 1; i < startDayOfWeek; i++) {
+          var cell = document.createElement("td");
+          row.appendChild(cell);
+        }
+
+        // Populate calendar cells with days of the month
+        for (var day = 1; day <= lastDay; day++) {
+          var cell = document.createElement("td");
+          cell.textContent = day;
+          row.appendChild(cell);
+
+          // Start a new row after each 7th day
+          if ((day + startDayOfWeek - 1) % 7 === 0) {
+            calendarBody.appendChild(row);
+            row = document.createElement("tr");
+          }
+        }
+
+        // Add the remaining cells
+        calendarBody.appendChild(row);
+      }*/
+
+      /*prevButton.addEventListener("click", function () {
+        currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+        currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+        renderCalendar();
+      });*/
+
+      nextButton.addEventListener("click", function () {
+        currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+        currentMonth = currentMonth === 11 ? 0 : currentMonth + 1;
+        renderCalendar();
+      });
+    });
+  },
+};
 </script>
 
 <style>
