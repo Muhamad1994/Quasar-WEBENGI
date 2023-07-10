@@ -119,13 +119,14 @@ a:hover {
   text-decoration: none;
 }
 .link {
-  color: #888;
+  color: #152565;
 }
 .link:hover {
   color: #f7f7fa;
 }
 h4 {
   font-weight: 600;
+  color: #f7f7fa;
 }
 h6 span {
   padding: 0 20px;
@@ -200,7 +201,7 @@ h6 span {
 .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2b2e38;
+  background-color: #888;
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -278,7 +279,7 @@ h6 span {
   display: inline-flex;
   align-items: center;
   background-color: #f7f7fa;
-  color: #1fa104;
+  color: #152565;
 }
 .btn:hover {
   background-color: #152565;

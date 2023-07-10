@@ -54,7 +54,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="email"] {
+/*input[type="email"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -73,7 +73,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
+}*/
 
 /* Optional: Styling für die Bestätigungsnachricht */
 .alert {
