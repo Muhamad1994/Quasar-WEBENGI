@@ -11,10 +11,10 @@
         rel="stylesheet"
         href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
       />
-      <link
+      <!--<link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      />
+      />-->
     </head>
 
     <body>
@@ -124,17 +124,17 @@ a:hover {
 .link:hover {
   color: #f7f7fa;
 }
-/*h4 {
+h4 {
   font-weight: 600;
-} */
+}
 h6 span {
   padding: 0 20px;
   font-weight: 700;
 }
 .section {
-  position: relative;
-  width: 100%;
+  max-width: 500px;
   display: block;
+  margin: 0 auto;
 }
 .full-height {
   min-height: 100vh;
