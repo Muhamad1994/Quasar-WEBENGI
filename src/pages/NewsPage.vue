@@ -4,6 +4,7 @@
       <div class="zero"></div>
       <div class="one">
         <div class="image"><img src="~assets/Fachschaft.jpg"></div>
+        <!--Inhalt in Anlehnug an die FaWi Seite-->
         <h2>Über Uns</h2>
         Die Fachschaftsvertretung ist die offizielle Vertretung der Studierenden
         am Fachbereich. Sie wird einmal pro akademischem Jahr (2 Semester)
@@ -53,6 +54,7 @@
         </p>
       </div>
       <div class="two">
+        <!--Inhalt aus dem "Aktuelles" der FH Seite, Quelle: https://www.fh-kiel.de/fh-intern/fachbereiche-intern/wirtschaft/aktuelles/einzelansicht/das-ibs-team-sucht-studentische-hilfskraft/ -->
         <h2>Das IBS Team sucht Studentische Hilfskraft</h2>
 
         <p>
@@ -81,6 +83,8 @@ Bitte senden Sie Ihre Bewerbung per E-Mail an <a
         </p>
       </div>
       <div class="three">
+        <!--Beispiel Parapharsiert von: Gehde, L. (8. Juli 2023). Kunst und Kultur auf dem FH-Campus - auch in den Semesterferien. FH Seite. Zugriff von:
+      https://www.fh-kiel.de/news/kunst-und-kultur-auf-dem-fh-campus-auch-in-den-semesterferien/-->
         <h2>Kunst und Kultur auf dem Campus der FH außerhalb der Vorlesungszeiten</h2>
         <p>
 Auf dem Campus der Fachhochschule Kiel gibt es nicht nur Lehrveranstaltungen und Experimente, sondern auch eine Vielzahl von Kultureinrichtungen.
@@ -125,18 +129,7 @@ Nach dem Ausstellungsbesuch lädt das Café im Bunker zum gemütlichen Beisammen
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #e8e8e8;
-}
-
-#head {
-  background-color: #474747;
-  display: inline-block;
-  align-content: center;
-  justify-content: center;
-  font-size: 100%;
-  color: white;
-  width: 100%;
-  height: 100px;
+  background-color: #f9f9f9;
 }
 
 img {
@@ -153,9 +146,24 @@ img {
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(400px, 3);
   grid-gap: 1%;
-  padding: 2%;
-  font: Arial;
+  padding-top: 2%;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-bottom: 10%;
 }
+
+/* Template für News-Einträge
+
+  .<divlass name>{
+  border-radius: 50px;
+  padding: 2%;
+  grid-column: 4 / 4;
+  grid-row: x / x; <- Zeilen eintrag von bis
+  background-color: #616161 / #152565;;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2%;
+  font-size: 140%;
+} */
 
 .one {
   border-radius: 50px;
@@ -184,7 +192,9 @@ img {
   color: white;
   font-size: 140%;
 }
-.four {
+
+
+/*.four {
   border-radius: 50px;
   padding: 2%;
   grid-column: 4 / 4;
@@ -192,5 +202,6 @@ img {
   background-color: #616161;
   color: rgb(255, 255, 255);
   margin-bottom: 2%;
-}
+} */
 </style>
+
