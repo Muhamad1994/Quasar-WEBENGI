@@ -1,36 +1,43 @@
 <template>
   <q-page>
-    <head>
-      <title>Anmeldung mit E-mail</title>
-    </head>
-
-    <body>
-      <h2>Anmeldung</h2>
-      <form onsubmit="sendConfirmation(); return false;">
+    <h2 style="text-align: center">Anmeldung</h2>
+    <div>
+      <form @submit="sendConfirmation">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required /><br /><br />
+        <input v-model="email" id="email" name="email" required /><br /><br />
         <input type="submit" value="Anmeldung" />
       </form>
-    </body>
+    </div>
   </q-page>
 </template>
-<script>
-function sendConfirmation() {
-  var email = document.getElementById("email").value;
-  // hier kann der code zum versenden der E-mail eingefügt werden
 
-  alert("eine Bestätigung wurde an" + email + "gesendet");
-}
+<script>
+export default {
+  data() {
+    return {
+      email: "",
+    };
+  },
+
+  methods: {
+    sendConfirmation() {
+      /*var email = document.getElementById("email").value;*/
+
+      alert("eine Bestätigung wurde an " + this.email + " gesendet");
+    },
+  },
+};
 </script>
 <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
 }
 
-/*.alerth2 {
+.alerth2 {
   color: #333;
-} */
+}
 
 form {
   max-width: 300px;
