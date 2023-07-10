@@ -75,7 +75,7 @@
                         <div class="section text-center">
                           <h4 class="mb-3 pb-3">Registrieren</h4>
 
-                          <div class="form-group mt-2">
+                          <div class="form-group mt-2" style="font-weight: 600">
                             <input
                               type="email"
                               class="form-style"
@@ -113,7 +113,6 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   line-height: 1.7;
-  color: #888;
   background-color: #f7f7fa;
 }
 a:hover {
@@ -125,13 +124,9 @@ a:hover {
 .link:hover {
   color: #f7f7fa;
 }
-p {
-  font-weight: 500;
-  font-size: 14px;
-}
-h4 {
+/*h4 {
   font-weight: 600;
-}
+} */
 h6 span {
   padding: 0 20px;
   font-weight: 700;

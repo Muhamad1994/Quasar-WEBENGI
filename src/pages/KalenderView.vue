@@ -62,10 +62,10 @@ nextButton.addEventListener("click", function () {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
 }
 h1,
 h2 {

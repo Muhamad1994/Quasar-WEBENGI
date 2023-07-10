@@ -24,13 +24,13 @@ function sendConfirmation() {
 </script>
 <style>
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
 }
 
-h2 {
+/*.alerth2 {
   color: #333;
-}
+} */
 
 form {
   max-width: 300px;
