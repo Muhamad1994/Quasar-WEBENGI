@@ -11,10 +11,10 @@
         rel="stylesheet"
         href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"
       />
-      <link
+      <!--<link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-      />
+      />-->
     </head>
 
     <body>
@@ -119,22 +119,23 @@ a:hover {
   text-decoration: none;
 }
 .link {
-  color: #888;
+  color: #152565;
 }
 .link:hover {
   color: #f7f7fa;
 }
-/*h4 {
+h4 {
   font-weight: 600;
-} */
+  color: #f7f7fa;
+}
 h6 span {
   padding: 0 20px;
   font-weight: 700;
 }
 .section {
-  position: relative;
-  width: 100%;
+  max-width: 500px;
   display: block;
+  margin: 0 auto;
 }
 .full-height {
   min-height: 100vh;
@@ -200,7 +201,7 @@ h6 span {
 .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2b2e38;
+  background-color: #888;
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -278,7 +279,7 @@ h6 span {
   display: inline-flex;
   align-items: center;
   background-color: #f7f7fa;
-  color: #1fa104;
+  color: #152565;
 }
 .btn:hover {
   background-color: #152565;
@@ -288,7 +289,7 @@ h6 span {
 </style>
 
 <script>
-/*import { auth } from "/firebaseConfig";*/
+import { auth } from "src/plugin/firebase.js";
 
 export default {
   data() {
