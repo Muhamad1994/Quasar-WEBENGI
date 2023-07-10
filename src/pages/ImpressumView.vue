@@ -93,6 +93,7 @@ article {
   padding-right: 20%;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 140%;
 }
 
 article h3 {
