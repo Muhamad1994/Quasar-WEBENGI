@@ -58,9 +58,13 @@
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="" class="btn mt-4">Login</a>
+
+                          <a @click="login" class="btn mt-4">Login</a>
+
                           <p class="mb-0 mt-4 text-center">
-                            <a href="" class="link">Passwort vergessen?</a>
+                            <a @click="resetPassword" class="link"
+                              >Passwort vergessen?</a
+                            >
                           </p>
                         </div>
                       </div>
@@ -87,7 +91,7 @@
                             />
                             <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="" class="btn mt-4">Registrieren</a>
+                          <a @click="register" class="btn mt-4">Registrieren</a>
                         </div>
                       </div>
                     </div>
@@ -289,30 +293,48 @@ h6 span {
 </style>
 
 <script>
-/**import { getAuth } from "firebase/auth";
-firebase
-  .auth()
-  .createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-  });
-firebase
-  .auth()
-  .signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });*/
+/*import { auth } from "/firebaseConfig";*/
+
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+      resetEmail: "",
+    };
+  },
+  methods: {
+    login() {
+      auth
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          // Erfolgreich angemeldet
+        })
+        .catch((error) => {
+          // Fehler bei der Anmeldung
+        });
+    },
+
+    register() {
+      auth
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          // Erfolgreich registriert
+        })
+        .catch((error) => {
+          // Fehler bei der Registrierung
+        });
+    },
+    resetPassword() {
+      auth
+        .sendPasswordResetEmail(this.resetEmail)
+        .then(() => {
+          // Zurücksetzungs-E-Mail wurde gesendet
+        })
+        .catch((error) => {
+          // Fehler beim Senden der Zurücksetzungs-E-Mail
+        });
+    },
+  },
+};
 </script>
