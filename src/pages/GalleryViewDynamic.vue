@@ -1,7 +1,7 @@
 <template>
   <!--Wir hatten Probleme beim Deployen auf Firebase, deshalb nur der Entwurf der Dynamischen Gallerie-->
   <div>
-    <h2>Gallery</h2>
+    <h2 style="text-align: center">Eure Einblicke</h2>
     <div class="images">
       <div v-for="image in images" :key="image.id">
         <img :src="image.url" :alt="image.title" />
@@ -11,18 +11,18 @@
     </div>
     <form @submit.prevent="addImage">
       <div>
-        <label for="title">Title</label>
+        <label for="title">Titel</label>
         <input type="text" id="title" v-model="newImage.title" />
       </div>
       <div>
-        <label for="description">Description</label>
+        <label for="description">Beschreibung</label>
         <textarea id="description" v-model="newImage.description"></textarea>
       </div>
       <div>
-        <label for="file">Image</label>
+        <label for="file">Foto</label>
         <input type="file" id="file" @change="onFileChange" />
       </div>
-      <button type="submit">Add Image</button>
+      <button type="submit">Hochladen</button>
     </form>
   </div>
 </template>
@@ -70,3 +70,30 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.alerth2 {
+  color: #333;
+}
+
+form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+</style>

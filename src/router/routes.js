@@ -31,6 +31,10 @@ const routes = [
         path: "Impressum",
         component: () => import("pages/ImpressumView.vue"),
       },
+      {
+        path: "Upload",
+        component: () => import("pages/GalleryViewDynamic.vue"),
+      },
     ],
   },
 

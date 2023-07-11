@@ -5,6 +5,18 @@
     <div v-for="image in images" :key="image" class="gallery-images">
       <q-img :src="image" :key="image" />
     </div>
+    <div class="footer">
+      <h3>Hast du noch mehr?</h3>
+      <h5>bereichert unsere Fachschaftsgalerie mit euren eigenen Bildern!</h5>
+      <q-btn
+        class="q-mt-xl"
+        color="indigo-9"
+        text-color="white"
+        to="/Upload"
+        label="Hier Hochladen"
+        no-caps
+      />
+    </div>
   </div>
 </template>
 
@@ -35,5 +47,10 @@ export default {
   max-height: 75%;
   margin-top: 5x;
   margin-bottom: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding-bottom: 20%;
 }
 </style>
