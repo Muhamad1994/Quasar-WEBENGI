@@ -35,6 +35,10 @@ const routes = [
         path: "Upload",
         component: () => import("pages/GalleryViewDynamic.vue"),
       },
+      {
+        path: "Beitrag-drei",
+        component: () => import("pages/news/beitrag-drei.vue"),
+      },
     ],
   },
 
