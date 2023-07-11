@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="beitrag_drei">
-      <!--Beispiel Parapharsiert teilweise durch ChatGPT von: Gehde, L. (8. Juli 2023). Kunst und Kultur auf dem FH-Campus - auch in den Semesterferien. FH Seite. Zugriff von:
+      <!--Beispiel Beitrag, parapharsiert teilweise durch ChatGPT von: Gehde, L. (8. Juli 2023). Kunst und Kultur auf dem FH-Campus - auch in den Semesterferien. FH Seite. Zugriff von:
       https://www.fh-kiel.de/news/kunst-und-kultur-auf-dem-fh-campus-auch-in-den-semesterferien/-->
       <h2>
         Kunst und Kultur auf dem Campus der FH außerhalb der Vorlesungszeiten

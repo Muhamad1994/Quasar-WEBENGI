@@ -15,6 +15,7 @@
         to="/Upload"
         label="Hier Hochladen"
         no-caps
+        size="lg"
       />
     </div>
   </div>
