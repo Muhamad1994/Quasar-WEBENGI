@@ -3,7 +3,7 @@
     <h3>Website wurde erstellt von</h3>
     <p>Muhamad, Kalender, Abraham, Sebastian</p>
     <div class="Impressum">
-      <h4>Impressum</h4>
+      <h3>Impressum</h3>
       Angaben gemäß § 5 TMG <br />
       Vorstand Fachschaft Wirtschaft<br />
       Sokratesplatz 2 24149 Kiel <br />
