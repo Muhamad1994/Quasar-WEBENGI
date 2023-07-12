@@ -1,18 +1,9 @@
 <template>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
-
+  <div>
     <div class="mobile-header z-depth-1">
-
       <div class="row">
         <div class="col-2">
-          <a href="#" data-activates="sidebar" class="button-collapse" style="">
+          <a href="#" @click="toggleSidebar" class="button-collapse" style="">
             <i class="material-icons">menu</i>
           </a>
         </div>
@@ -20,13 +11,10 @@
           <h4>Events</h4>
         </div>
       </div>
-
     </div>
 
     <div class="main-wrapper">
-
-      <div class="sidebar-wrapper z-depth-2 side-nav fixed" id="sidebar">
-
+      <div class="sidebar-wrapper z-depth-2 side-nav fixed" v-bind:class="{ active: isSidebarOpen }" id="sidebar">
         <div class="sidebar-title">
           <h4>Events</h4>
           <h5 id="eventDayName">Date</h5>
@@ -34,38 +22,30 @@
         <div class="sidebar-events" id="sidebarEvents">
           <div class="empty-message">Sorry, no events to selected date</div>
         </div>
-
       </div>
 
       <div class="content-wrapper grey lighten-3">
         <div class="container">
-
           <div class="calendar-wrapper z-depth-2">
-
             <div class="header-background">
               <div class="calendar-header">
-
-                <a class="prev-button" id="prev">
+                <a class="prev-button" @click="previousMonth">
                   <i class="material-icons">keyboard_arrow_left</i>
                 </a>
-                <a class="next-button" id="next">
+                <a class="next-button" @click="nextMonth">
                   <i class="material-icons">keyboard_arrow_right</i>
                 </a>
-
                 <div class="row header-title">
-
                   <div class="header-text">
-                    <h3 id="month-name">February</h3>
-                    <h5 id="todayDayName">Today is Friday 7 Feb</h5>
+                    <h3>{{ currentMonth }}</h3>
+                    <h5>Today is {{ today }}</h5>
                   </div>
-
                 </div>
               </div>
             </div>
 
             <div class="calendar-content">
               <div id="calendar-table" class="calendar-cells">
-
                 <div id="table-header">
                   <div class="row">
                     <div class="col">Mon</div>
@@ -78,61 +58,85 @@
                   </div>
                 </div>
 
-                <div id="table-body" class="">
-
+                <div id="table-body">
+                  <!-- Calendar cells content -->
                 </div>
-
               </div>
             </div>
 
             <div class="calendar-footer">
               <div class="emptyForm" id="emptyForm">
                 <h4 id="emptyFormTitle">No events now</h4>
-                <a class="addEvent" id="changeFormButton">Add new</a>
+                <a class="addEvent" @click="showAddForm">Add new</a>
               </div>
-              <div class="addForm" id="addForm">
+              <div class="addForm" v-show="isAddFormVisible">
                 <h4>Add new event</h4>
 
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="eventTitleInput" type="text" class="validate">
+                    <input id="eventTitleInput" type="text" class="validate" v-model="eventTitle">
                     <label for="eventTitleInput">Title</label>
                   </div>
                   <div class="input-field col s6">
-                    <input id="eventDescInput" type="text" class="validate">
+                    <input id="eventDescInput" type="text" class="validate" v-model="eventDescription">
                     <label for="eventDescInput">Description</label>
                   </div>
                 </div>
 
                 <div class="addEventButtons">
-                  <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Add</a>
-                  <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancel</a>
+                  <a class="waves-effect waves-light btn blue lighten-2" @click="addEvent">Add</a>
+                  <a class="waves-effect waves-light btn grey lighten-2" @click="cancelAdd">Cancel</a>
                 </div>
-
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
-
     </div>
-    </template>
+  </div>
+</template>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script>
-      $(".button-collapse").sideNav();
-
-    </script>
+<script>
+export default {
+  data() {
+    return {
+      isSidebarOpen: false,
+      currentMonth: 'February',
+      today: 'Today is Friday 7 Feb',
+      isAddFormVisible: false,
+      eventTitle: '',
+      eventDescription: ''
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    },
+    previousMonth() {
+      // Logic for going to the previous month
+    },
+    nextMonth() {
+      // Logic for going to the next month
+    },
+    showAddForm() {
+      this.isAddFormVisible = true;
+    },
+    addEvent() {
+      // Logic for adding a new event
+    },
+    cancelAdd() {
+      this.isAddFormVisible = false;
+      this.eventTitle = '';
+      this.eventDescription = '';
+    }
+  }
+};
+</script>
 
 
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 body {
    font-family: 'Roboto', sans-serif;
    font-weight: 400;
