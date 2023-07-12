@@ -17,7 +17,6 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <q-page>
@@ -121,15 +120,36 @@
         </div>
       </div>
     </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      $(".button-collapse").sideNav();
+      export default {
+        mounted() {
+          // jQuery
+          const jqueryScript = document.createElement("script");
+          jqueryScript.src =
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";
+          document.head.appendChild(jqueryScript);
+
+          // Popper.js
+          const popperScript = document.createElement("script");
+          popperScript.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
+          popperScript.integrity =
+            "sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh";
+          popperScript.crossOrigin = "anonymous";
+          document.head.appendChild(popperScript);
+
+          // Materialize CSS
+          const materializeScript = document.createElement("script");
+          materializeScript.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js";
+          document.head.appendChild(materializeScript);
+
+          // jQuery code
+          const jqueryCode = document.createElement("script");
+          jqueryCode.text = `$(".button-collapse").sideNav();`;
+          document.body.appendChild(jqueryCode);
+        },
+      };
     </script>
   </q-page>
 </template>
