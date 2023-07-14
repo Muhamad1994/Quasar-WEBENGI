@@ -365,8 +365,8 @@ input.add-event-edit:-ms-input-placeholder {
   cursor: pointer;
 }
 #add-event {
-  color: #152565;
-  border-color: #152565;
+  color: #04b6e2;
+  border-color: #04b6e2;
 }
 .day-view-exit {
   position: absolute;
