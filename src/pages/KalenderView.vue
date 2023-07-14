@@ -1,507 +1,690 @@
 <template>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
+  <div class="wrapper">
+    <div class="c-monthyear">
+      <div class="c-month">
+        <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"></span>
+        <div id="c-paginator">
+          <span class="c-paginator__month">JANUARY</span>
+          <span class="c-paginator__month">FEBRUARY</span>
+          <span class="c-paginator__month">MARCH</span>
+          <span class="c-paginator__month">APRIL</span>
+          <span class="c-paginator__month">MAY</span>
+          <span class="c-paginator__month">JUNE</span>
+          <span class="c-paginator__month">JULY</span>
+          <span class="c-paginator__month">AUGUST</span>
+          <span class="c-paginator__month">SEPTEMBER</span>
+          <span class="c-paginator__month">OCTOBER</span>
+          <span class="c-paginator__month">NOVEMBER</span>
+          <span class="c-paginator__month">DECEMBER</span>
+        </div>
+        <span
+          id="next"
+          class="next fa fa-angle-right"
+          aria-hidden="true"
+        ></span>
+      </div>
+      <span class="c-paginator__year">2022</span>
+    </div>
+    <div class="c-sort">
+      <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
+    </div>
+  </div>
 
-  <body>
-    <div class="mobile-header z-depth-1">
-      <div class="row">
-        <div class="col-2">
-          <a href="#" data-activates="sidebar" class="button-collapse" style="">
-            <i class="material-icons">menu</i>
-          </a>
+  <div class="wrapper">
+    <div class="c-calendar">
+      <div class="c-calendar__style c-aside">
+        <a class="c-add o-btn js-event__add" href="javascript:;"
+          >add event <span class="fa fa-plus"></span
+        ></a>
+        <div class="c-aside__day">
+          <span class="c-aside__num"></span>
+          <span class="c-aside__month"></span>
         </div>
-        <div class="col">
-          <h4>Events</h4>
-        </div>
+        <div class="c-aside__eventList"></div>
+      </div>
+      <div class="c-cal__container c-calendar__style">
+        <script>
+          // CAHNGE the below variable to the CURRENT YEAR
+          year = 2022;
+
+          // first day of the week of the new year
+          today = new Date("January 1, " + year);
+          start_day = today.getDay() + 1;
+          fill_table("January", 31, "01");
+          fill_table("February", 28, "02");
+          fill_table("March", 31, "03");
+          fill_table("April", 30, "04");
+          fill_table("May", 31, "05");
+          fill_table("June", 30, "06");
+          fill_table("July", 31, "07");
+          fill_table("August", 31, "08");
+          fill_table("September", 30, "09");
+          fill_table("October", 31, "10");
+          fill_table("November", 30, "11");
+          fill_table("December", 31, "12");
+        </script>
       </div>
     </div>
 
-    <div class="main-wrapper">
-      <div class="sidebar-wrapper z-depth-2 side-nav fixed" id="sidebar">
-        <div class="sidebar-title">
-          <h4>Events</h4>
-          <h5 id="eventDayName">Date</h5>
-        </div>
-        <div class="sidebar-events" id="sidebarEvents">
-          <div class="empty-message">Sorry, no events to selected date</div>
-        </div>
-      </div>
-
-      <div class="content-wrapper grey lighten-3">
-        <div class="container">
-          <div class="calendar-wrapper z-depth-2">
-            <div class="header-background">
-              <div class="calendar-header">
-                <a class="prev-button" id="prev">
-                  <i class="material-icons">keyboard_arrow_left</i>
-                </a>
-                <a class="next-button" id="next">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                </a>
-
-                <div class="row header-title">
-                  <div class="header-text">
-                    <h3 id="month-name">February</h3>
-                    <h5 id="todayDayName">Today is Friday 7 Feb</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="calendar-content">
-              <div id="calendar-table" class="calendar-cells">
-                <div id="table-header">
-                  <div class="row">
-                    <div class="col">Mon</div>
-                    <div class="col">Tue</div>
-                    <div class="col">Wed</div>
-                    <div class="col">Thu</div>
-                    <div class="col">Fri</div>
-                    <div class="col">Sat</div>
-                    <div class="col">Sun</div>
-                  </div>
-                </div>
-
-                <div id="table-body" class=""></div>
-              </div>
-            </div>
-
-            <div class="calendar-footer">
-              <div class="emptyForm" id="emptyForm">
-                <h4 id="emptyFormTitle">No events now</h4>
-                <a class="addEvent" id="changeFormButton">Add new</a>
-              </div>
-              <div class="addForm" id="addForm">
-                <h4>Add new event</h4>
-
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="eventTitleInput" type="text" class="validate" />
-                    <label for="eventTitleInput">Title</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="eventDescInput" type="text" class="validate" />
-                    <label for="eventDescInput">Description</label>
-                  </div>
-                </div>
-
-                <div class="addEventButtons">
-                  <a
-                    class="waves-effect waves-light btn blue lighten-2"
-                    id="addEventButton"
-                    >Add</a
-                  >
-                  <a
-                    class="waves-effect waves-light btn grey lighten-2"
-                    id="cancelAdd"
-                    >Cancel</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="c-event__creator c-calendar__style js-event__creator">
+      <a href="javascript:;" class="o-btn js-event__close"
+        >CLOSE <span class="fa fa-close"></span
+      ></a>
+      <form id="addEvent">
+        <input placeholder="Event name" type="text" name="name" />
+        <input type="date" name="date" />
+        <textarea
+          placeholder="Notes"
+          name="notes"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <select name="tags">
+          <option value="event">event</option>
+          <option value="important">important</option>
+          <option value="birthday">birthday</option>
+          <option value="festivity">festivity</option>
+        </select>
+      </form>
+      <br />
+      <a href="javascript:;" class="o-btn js-event__save"
+        >SAVE <span class="fa fa-save"></span
+      ></a>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
-export default {
-  mounted() {
-    // jQuery
-    const jqueryScript = document.createElement("script");
-    jqueryScript.src =
-      "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";
-    document.head.appendChild(jqueryScript);
+// fill the month table with column headings
+function day_title(day_name) {
+  document.write("<div class='c-cal__col'>" + day_name + "</div>");
+}
+// fills the month table with numbers
+function fill_table(month, month_length, indexMonth) {
+  day = 1;
+  // begin the new month table
+  document.write("<div class='c-main c-main-" + indexMonth + "'>");
+  //document.write("<b>"+month+" "+year+"</b>")
 
-    // Popper.js
-    const popperScript = document.createElement("script");
-    popperScript.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
-    popperScript.integrity =
-      "sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh";
-    popperScript.crossOrigin = "anonymous";
-    document.head.appendChild(popperScript);
+  // column headings
+  document.write("<div class='c-cal__row'>");
+  day_title("Sun");
+  day_title("Mon");
+  day_title("Tue");
+  day_title("Wed");
+  day_title("Thu");
+  day_title("Fri");
+  day_title("Sat");
+  document.write("</div>");
 
-    // Materialize CSS
-    const materializeScript = document.createElement("script");
-    materializeScript.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js";
-    document.head.appendChild(materializeScript);
+  // pad cells before first day of month
+  document.write("<div class='c-cal__row'>");
+  for (var i = 1; i < start_day; i++) {
+    if (start_day > 7) {
+    } else {
+      document.write("<div class='c-cal__cel'></div>");
+    }
+  }
 
-    // jQuery code
-    const jqueryCode = document.createElement("script");
-    jqueryCode.text = `$(".button-collapse").sideNav();`;
-    document.body.appendChild(jqueryCode);
-  },
-};
+  // fill the first week of days
+  for (var i = start_day; i < 8; i++) {
+    document.write(
+      "<div data-day='2022-" +
+        indexMonth +
+        "-0" +
+        day +
+        "'class='c-cal__cel'><p>" +
+        day +
+        "</p></div>"
+    );
+    day++;
+  }
+  document.write("</div>");
+
+  // fill the remaining weeks
+  while (day <= month_length) {
+    document.write("<div class='c-cal__row'>");
+    for (var i = 1; i <= 7 && day <= month_length; i++) {
+      if (day >= 1 && day <= 9) {
+        document.write(
+          "<div data-day='2022-" +
+            indexMonth +
+            "-0" +
+            day +
+            "'class='c-cal__cel'><p>" +
+            day +
+            "</p></div>"
+        );
+        day++;
+      } else {
+        document.write(
+          "<div data-day='2022-" +
+            indexMonth +
+            "-" +
+            day +
+            "' class='c-cal__cel'><p>" +
+            day +
+            "</p></div>"
+        );
+        day++;
+      }
+    }
+    document.write("</div>");
+    // the first day of the next month
+    start_day = i;
+  }
+
+  document.write("</div>");
+}
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-body {
-  font-family: "Roboto", sans-serif;
+@import "https://fonts.googleapis.com/css?family=Lato:300,300i,900,900i";
+.txt__normal {
+  font-family: "Lato", sans-serif;
   font-weight: 400;
 }
-
-h3,
-h4,
-h5 {
-  font-weight: 300 !important;
+.txt__normal--it {
+  .txt__normal;
+  font-style: italic;
+}
+.txt__bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+.txt__bold--it {
+  .txt__bold;
+  font-style: italic;
+}
+.txt__awesome {
+  font: normal normal normal 14px/1 FontAwesome;
 }
 
-.calendar-wrapper {
-  height: auto;
-  max-width: 730px;
+@col__black: fade(#000000, 90%);
+@col__white: #ffffff;
+@col__grey: fade(@col__black, 10%);
+@col__lightgrey: #f5f5f5;
+@col__blu: #00407b;
+@col__red: #f57170;
+@col__green: #10ddc2;
+@col__yellow: #facc2e;
+
+@sz__small: 13px;
+@sz__medium: 16px;
+@sz__large: 28px;
+
+@mr__small: 20px;
+@mr__medium: 30px;
+@mr__large: 50px;
+
+@headerH: 80px;
+@asideW: 300px;
+
+@letter-spacing: 2px;
+
+@zindex-1: 10;
+@zindex-2: 20;
+@zindex-3: 30;
+@zindex-4: 40;
+@zindex-5: 50;
+@zindex-top: 100;
+
+@border-radius: 6px;
+
+@mq__smartphone: ~"(max-width: 1024px)";
+
+body {
+  position: realative;
+  height: 100%;
+  &.overlay {
+    &:before {
+      position: fixed;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: fade(@col__black, 40%);
+      z-index: @zindex-top;
+    }
+  }
+}
+
+html {
+  height: 100%;
+  background: darken(@col__blu, 4%);
+  color: @col__white;
+  font-size: @sz__small;
+  .txt__normal;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
 }
 
-.calendar-header {
-  background-color: rgba(18, 15, 25, 0.25);
-  height: 100%;
-  padding: 20px;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  position: relative;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-
-.header-title {
-  padding-left: 15%;
-}
-
-.header-background {
-  background-image: url("https://raw.githubusercontent.com/JustMonk/codepen-resource-project/master/img/compressed-header.jpg");
-  height: 200px;
-  background-position: center right;
-  background-size: cover;
-}
-
-.calendar-content {
-  background-color: #fff;
-  padding: 20px;
-  padding-left: 15%;
-  padding-right: 15%;
-  overflow: hidden;
-}
-
-.event-mark {
-  width: 5px;
-  height: 5px;
-  background-color: teal;
-  border-radius: 100px;
-  position: absolute;
-  left: 46%;
-  top: 70%;
-}
-
-.calendar-footer {
-  height: 200px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  text-align: center;
-  background-color: #4b6289 !important;
-  position: relative;
-  overflow: hidden;
-}
-
-.addForm {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 100%;
-  background-color: #4b5889 !important;
-  transition: top 0.5s cubic-bezier(1, 0, 0, 1);
-  padding: 0 5px 0 5px;
-}
-
-.addForm input {
-  color: #fff;
-}
-
-.addForm .row {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin-bottom: 0;
-}
-
-.addForm h4 {
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-.addEventButtons {
-  text-align: right;
-  padding: 0 0.75rem 0 0.75rem;
-}
-
-.addEventButtons a {
-  color: black;
-  font-weight: 300;
-}
-
-.emptyForm {
-  padding: 20px;
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
-.emptyForm h4 {
-  color: #fff;
-  margin-bottom: 2rem;
-}
-
-.sidebar-wrapper {
-  color: #fff;
-  background-color: #5a649c !important;
-  padding-top: 0;
-  padding-bottom: 20px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.sidebar-title {
-  padding: 50px 6% 50px 12%;
-}
-
-.sidebar-title h4 {
-  margin-top: 0;
-}
-
-.sidebar-events {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin-bottom: 70px;
-}
-
-.empty-message {
-  font-size: 1.2rem;
-  padding: 15px 6% 15px 12%;
-}
-
-.eventCard {
-  background-color: #fff;
-  color: black;
-  padding: 12px 24px 12px 24px;
-  border-bottom: 1px solid #e5e5e5;
-  white-space: nowrap;
-  position: relative;
-  animation: slideInDown 0.5s;
-}
-
-.eventCard-header {
-  font-weight: bold;
-}
-
-.eventCard-description {
-  color: grey;
-}
-
-.eventCard-mark-wrapper {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 60px;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 25%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-.eventCard-mark {
-  width: 8px;
-  height: 8px;
-  background-color: #b39ddb;
-  border-radius: 100px;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-}
-
-.day-mark {
-  width: 7px;
-  height: 7px;
-  background-color: #b39ddb;
-  border-radius: 100px;
-  position: absolute;
-  left: 47%;
-  top: 67%;
-}
-
-.content-wrapper {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-left: 300px;
-}
-
-#table-body .col:hover {
-  cursor: pointer;
-  /*border: 1px solid grey;*/
-  background-color: #e0e0e0;
-}
-
-.empty-day:hover {
-  cursor: default !important;
-  background-color: #fff !important;
-}
-
-#table-body .row .col {
-  padding: 0.75rem;
-}
-
-#table-body .col {
-  border: 1px solid transparent;
-}
-
-#table-body .row {
-  margin-bottom: 0;
-}
-
-#table-body .col {
-  padding-top: 1.3rem !important;
-  padding-bottom: 1.3rem !important;
-}
-
-#calendar-table {
-  text-align: center;
-}
-
-.prev-button {
-  position: absolute;
-  cursor: pointer;
-  left: 0%;
-  top: 35%;
-  color: grey !important;
-}
-
-.prev-button i {
-  font-size: 4em;
-}
-
-.next-button {
-  position: absolute;
-  cursor: pointer;
-  right: 0%;
-  top: 35%;
-  color: grey !important;
-}
-
-.next-button i {
-  font-size: 4em;
-}
-
-.addEvent {
-  box-shadow: 0 5px 15px rgb(57, 168, 228);
-  background-color: #39a8e4;
-  padding: 10px;
-  padding-left: 3em;
-  padding-right: 3em;
-  cursor: pointer;
-  border-radius: 25px;
-  color: #fff !important;
-  background-image: linear-gradient(135deg, #8d8dd4, #45ced4);
-}
-
-.addEvent:hover {
-  transition: box-shadow 0.5s;
-  box-shadow: 0 4px 25px rgb(57, 168, 228);
-}
-
-.mobile-header {
-  padding: 0;
-  display: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
+header {
   position: fixed;
-  z-index: 99;
+  height: @headerH;
   width: 100%;
-  background-color: #5a649c !important;
-}
-
-.mobile-header a i {
-  color: #fff;
-  font-size: 38px;
-}
-
-.mobile-header h4 {
-  color: #fff;
-}
-
-.mobile-header .row {
-  margin-bottom: 0;
-}
-
-.mobile-header h4 {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-}
-
-@media (max-width: 992px) {
-  .content-wrapper {
-    margin-left: 0;
+  z-index: @zindex-5;
+  background: darken(@col__blu, 4%);
+  & > .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 @mr__small;
+    .u-border-box;
+    color: @col__white;
+    letter-spacing: @letter-spacing;
+    font-size: @sz__small;
+    a {
+      color: @col__white;
+      text-decoration: none;
+      margin-left: @mr__small / 2;
+    }
   }
-  .mobile-header {
+}
+.c-monthyear {
+  display: flex;
+}
+.c-month {
+  position: relative;
+  height: @headerH;
+  line-height: @headerH;
+
+  #c-paginator {
+    position: relative;
+    width: 200px;
     display: block;
+    height: @headerH;
+    line-height: @headerH;
+    text-align: center;
+    overflow: hidden;
+    .c-paginator__month {
+      position: absolute;
+      width: 200px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        left: 200px;
+      }
+      &:nth-child(3) {
+        left: 400px;
+      }
+      &:nth-child(4) {
+        left: 600px;
+      }
+      &:nth-child(5) {
+        left: 800px;
+      }
+      &:nth-child(6) {
+        left: 1000px;
+      }
+      &:nth-child(7) {
+        left: 1200px;
+      }
+      &:nth-child(8) {
+        left: 1400px;
+      }
+      &:nth-child(9) {
+        left: 1600px;
+      }
+      &:nth-child(10) {
+        left: 1800px;
+      }
+      &:nth-child(11) {
+        left: 2000px;
+      }
+      &:nth-child(12) {
+        left: 2200px;
+      }
+    }
   }
-  .calendar-wrapper {
-    margin-top: 80px;
+
+  .prev,
+  .next {
+    position: absolute;
+    display: block;
+    top: 50%;
+    width: @mr__medium;
+    height: @mr__medium;
+    padding: 9px 12px;
+    background-color: lighten(@col__blu, 4%);
+    cursor: pointer;
+    z-index: @zindex-1;
+    .u-border-box;
+    .u-transform(translatey(-50%));
+    .u-border-radius(50%);
+    .u-transition;
   }
-  .sidebar-wrapper {
-    background-color: #eeeeee !important;
+  .prev {
+    left: 0;
+    &:hover {
+      padding: 9px 10px;
+      background-color: lighten(@col__blu, 8%);
+    }
   }
-  .sidebar-title {
-    background-color: #5a649c !important;
-  }
-  .empty-message {
-    color: black;
+  .next {
+    right: 0;
+    &:hover {
+      padding: 9px 14px;
+      background-color: lighten(@col__blu, 8%);
+    }
   }
 }
 
-@media (max-width: 767px) {
-  .content-wrapper .container {
-    width: auto;
+.c-paginator__year {
+  height: @headerH;
+  line-height: @headerH;
+  padding: 0 @mr__small;
+}
+
+.o-btn {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: @mr__medium;
+  height: @mr__medium;
+  background-color: lighten(@col__blu, 4%);
+  text-transform: uppercase;
+  letter-spacing: @letter-spacing;
+  .u-border-radius(@mr__medium/2);
+  .u-transition;
+
+  span {
+    margin-left: 10px;
   }
-  .calendar-content {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  body .row {
-    margin-bottom: 0;
+
+  &:hover {
+    background-color: lighten(@col__blu, 8%);
   }
 }
 
-@media (max-width: 450px) {
-  .content-wrapper {
-    padding-left: 0;
-    padding-right: 0;
+//calendar
+.c-calendar {
+  padding-top: @headerH;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.c-calendar__style {
+  background-color: @col__blu;
+  margin: @mr__small;
+  padding: @mr__small / 2;
+  .u-shadow;
+  .u-border-radius(@border-radius);
+}
+
+.c-cal__container {
+  position: relative;
+  width: calc(100% ~"-" @asideW);
+  height: 0;
+  padding-bottom: 65%;
+  overflow: hidden;
+}
+
+.c-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+  .u-border-box;
+  &-01 {
+    left: 0;
   }
-  .content-wrapper .container {
-    padding-left: 0;
-    padding-right: 0;
+  &-02 {
+    left: 100%;
   }
+  &-03 {
+    left: 200%;
+  }
+  &-04 {
+    left: 300%;
+  }
+  &-05 {
+    left: 400%;
+  }
+  &-06 {
+    left: 500%;
+  }
+  &-07 {
+    left: 600%;
+  }
+  &-08 {
+    left: 700%;
+  }
+  &-09 {
+    left: 800%;
+  }
+  &-10 {
+    left: 900%;
+  }
+  &-11 {
+    left: 1000%;
+  }
+  &-12 {
+    left: 1100%;
+  }
+}
+
+.c-cal__row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+//info column element
+.c-cal__col {
+  width: calc(100% ~"/" 7);
+  text-align: center;
+  height: @mr__large;
+  line-height: @mr__large;
+  letter-spacing: @letter-spacing;
+  text-transform: uppercase;
+}
+
+//cel element
+.c-cal__cel {
+  position: relative;
+  width: calc(100% ~"/" 7);
+  text-align: center;
+  cursor: pointer;
+  .u-border-radius(50%);
+  .u-transition.long;
+  p {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    width: @mr__small*2;
+    height: @mr__small*2;
+    line-height: @mr__small*2;
+    background: lighten(@col__blu, 2%);
+    .u-transform(translate(-50%, -50%));
+    .u-border-radius(50%);
+    .u-transition.long;
+  }
+
+  //responsive square
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  //weekend color
+  &:nth-child(1) {
+    p {
+      background: fade(darken(@col__red, 25%), 20%);
+    }
+  }
+  &:nth-child(7) {
+    p {
+      background: darken(@col__blu, 2%);
+    }
+  }
+
+  &:hover {
+    background-color: lighten(@col__blu, 4%) !important;
+    p {
+      background: darken(@col__blu, 2%) !important;
+    }
+  }
+
+  //on click
+  &.isSelected {
+    background-color: lighten(@col__blu, 4%);
+    p {
+      background: darken(@col__blu, 2%);
+    }
+  }
+  &.isToday {
+    background-color: fade(@col__red, 20%);
+    p {
+      background: fade(@col__red, 40%);
+    }
+  }
+  //not this month
+  &.other_month {
+    color: fade(@col__white, 20%);
+  }
+}
+
+//event indicator style
+.event {
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: @mr__small / 2;
+    height: @mr__small / 2;
+    background-color: @col__lightgrey;
+    z-index: @zindex-1;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    .u-border-radius(50%);
+    .u-transform(translate(-50%, calc(50% ~"+" @mr__small/2)));
+  }
+
+  &--birthday {
+    &:before {
+      background-color: @col__yellow;
+    }
+  }
+  &--festivity {
+    &:before {
+      background-color: @col__green;
+    }
+  }
+  &--important {
+    &:before {
+      background-color: @col__red;
+    }
+  }
+}
+
+// aside
+.c-aside {
+  width: @asideW;
+  padding: @mr__small;
+}
+.c-aside__day {
+  font-size: @sz__large;
+  margin: @mr__large 0;
+  .c-aside__num {
+    .txt__bold;
+  }
+}
+.c-aside__event {
+  position: relative;
+  padding-left: @mr__small;
+  margin: @mr__small 0;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    left: 0;
+    background-color: @col__lightgrey;
+    .u-border-radius(50%);
+  }
+  &--birthday {
+    &:before {
+      background-color: @col__yellow;
+    }
+  }
+  &--festivity {
+    &:before {
+      background-color: @col__green;
+    }
+  }
+  &--important {
+    &:before {
+      background-color: @col__red;
+    }
+  }
+}
+
+.c-event__creator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 500px;
+  max-height: 470px;
+  width: 100%;
+  height: 100%;
+  z-index: @zindex-top;
+  padding: @mr__small;
+  visibility: hidden;
+  opacity: 0;
+  .u-transition;
+  .u-border-box;
+  .u-transform(translate(-50%, -50%)scale(0.9));
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &.isVisible {
+    .u-transform(translate(-50%, -50%)scale(1));
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+input,
+textarea,
+select {
+  .resetDefaultApparence;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  .u-border-radius(20px);
+  .u-border-box;
+}
+
+input {
+  height: 40px;
 }
 </style>
